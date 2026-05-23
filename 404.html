@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive" />
+  <meta name="bingbot" content="noindex, nofollow, noarchive" />
+
+  <title>404 — Celestrium Online Portal</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicons/favicon.png?login.live.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: rgba(255, 255, 255, 0.7);
+      --text: #0f172a;
+      --accent: #2563eb;
+      --subtext: #64748b;
+      --glass-border: rgba(255, 255, 255, 0.5);
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      background: var(--bg);
+      color: var(--text);
+      transition: background .3s ease, color .3s ease;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: fadeBody .4s ease;
+    }
+
+    @keyframes fadeBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Background blobs */
+    .bg-blobs {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .blob {
+      position: absolute;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+      filter: blur(80px);
+      opacity: 0.12;
+      animation: float 20s infinite alternate ease-in-out;
+    }
+
+    .blob.one { width: 560px; height: 560px; top: -190px; left: -170px; }
+    .blob.two { width: 520px; height: 520px; bottom: -230px; right: -160px; animation-duration: 24s; }
+    .blob.three { width: 420px; height: 420px; top: 22%; right: 18%; animation-duration: 28s; opacity: 0.10; }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(10%, 15%) scale(1.1); }
+    }
+
+    /* Layout improvements */
+    .page {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .card-404 {
+      width: min(820px, 100%);
+      background: linear-gradient(
+        to bottom right,
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,0.55)
+      );
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: fade .25s ease;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .top-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .illustration {
+      font-size: 3.4rem;
+      color: var(--accent);
+      opacity: 0.85;
+      margin-bottom: 4px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--glass-border);
+      background: rgba(0,0,0,0.02);
+      font-weight: 700;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    h1 {
+      margin: 6px 0 0;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .sub {
+      margin: 0 0 28px;
+      color: var(--subtext);
+      font-size: 1.1rem;
+      line-height: 1.55;
+      max-width: 75ch;
+    }
+
+    .actions {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 12px;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(37,99,235,0.35);
+    }
+
+    .btn.primary:active {
+      transform: scale(0.95);
+    }
+
+    /* Inline code-style link */
+    .code-link {
+      font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+      background: rgba(0, 0, 0, 0.06);
+      padding: 4px 6px;
+      border-radius: 6px;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid rgba(0,0,0,0.08);
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .code-link:hover {
+      background: rgba(0, 0, 0, 0.10);
+      border-color: rgba(0,0,0,0.18);
+    }
+
+    .spacer {
+      height: 24px;
+    }
+
+    @media (max-width: 720px) {
+      .page { padding: 22px; }
+      .card-404 { padding: 32px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .blob { animation: none; }
+      .btn { transition: none; }
+      .card-404 { animation: none; }
+      body { animation: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob one"></div>
+    <div class="blob two"></div>
+    <div class="blob three"></div>
+  </div>
+
+  <main class="page">
+    <section class="card-404">
+
+      <div class="top-group">
+        <div class="illustration">
+          <i class="fas fa-compass"></i>
+        </div>
+
+        <div class="kicker">
+          <i class="fas fa-triangle-exclamation"></i>
+          Error 404
+        </div>
+
+        <h1>Page not found</h1>
+        <p class="sub">
+          That link doesn’t exist (or it moved). Use the button below to return to the portal.
+        </p>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="index.html?login.live.com" id="homeBtn">
+          <i class="fas fa-arrow-left"></i>
+          Return Home
+        </a>
+      </div>
+
+      <div class="spacer"></div>
+
+      <p class="sub">
+        If this is a recurring problem for you, please submit an issue ticket at<br><a href="https://github.com/celestrium-games/portal/issues" target="_blank" class="code-link">
+          https://github.com/celestrium-games/portal/issues
+        </a><br>and the Celestrium Online team will reach out to you when they are available.
+      </p>
+
+    </section>
+  </main>
+
+  <script>
+    const homeBtn = document.getElementById('homeBtn');
+    homeBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const redirectUrl = 'https://celestrium.vercel.app?login.live.com';
+      window.open(redirectUrl, '_blank');
+      window.close();
+    });
+  </script>
+</body>
+</html>
